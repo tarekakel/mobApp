@@ -1,0 +1,64 @@
+<app-top-slider></app-top-slider>
+
+
+<section class="section-sm">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-12">
+
+				<div class="search-result bg-gray">
+
+					<div class="row">
+						<div class="col-md-11">
+							<h2>Mobile Repair</h2>
+							<p class="MobilskaTextColor">1. Choose your mobile device brand</p>
+						</div>
+
+						<div class=" image_section col-md-1 pl-0">
+								<img class="img-thumbnail img-right" src="../../../assets/images/warranty.png" alt="">
+						</div>
+					</div>		
+				</div>
+			</div>
+		</div>
+		
+        <div class="row">
+
+
+            <div class="col-md-12">
+                <div class="product-grid-list">
+                    <div class="row mt-30">
+            
+                        <div *ngFor="let brand of brands" class="col-sm-12 col-lg-3 col-md-6">
+                            <!-- product card -->
+                            <a [routerLink]="['/mobile-repair-devices', brand.id]">
+
+                            <div class="product-item bg-light">
+                                <div class="card">
+                                    <div class="thumb-content">
+                                        <!-- <div class="price">$200</div> -->
+                                            <img class="card-img-top img-fluid pt-3" src="../../../{{brand.mainImageUrl}}" alt="Card image cap">	
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="text-center"><i class="{{brand.iconName}}"></i></h4>
+                                        <h4 class="card-title text-center">{{brand.name}}</h4>	   
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                            </div>
+
+                            
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        
+
+	</div>
+</section>

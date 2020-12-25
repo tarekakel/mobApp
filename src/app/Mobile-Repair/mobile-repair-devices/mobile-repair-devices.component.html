@@ -1,0 +1,50 @@
+<app-top-slider></app-top-slider>
+
+<section class="section-sm">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="search-result bg-gray">
+					<div class="row">
+						<div class="col-md-11">
+							<h2>Mobile Repair</h2>
+							<p class="MobilskaTextColor">2. Choose your mobile device</p>
+						</div>
+						<div class=" image_section col-md-1 pl-0">
+							<img class="img-thumbnail img-right" src="../../../assets/images/warranty.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-12">
+				<div class="product-grid-list">
+					<div class="row mt-30">
+
+						<div *ngFor="let item of items" class="col-sm-12 col-lg-3 col-md-6">
+							<div class="product-item bg-light">
+								<div class="card">
+									<a [routerLink]="['/mobile-repair-parts', item.id]">
+
+										<div class="thumb-content">
+											<img class="card-img-top img-fluid pt-3"
+												src="../../../{{item.mainImageUrl}}" alt="Card image cap">
+										</div>
+										<div class="card-body">
+											<h4 class="card-title text-center">{{item.name}}</h4>
+											<p class="text-center">{{item.releaseYear}}</p>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

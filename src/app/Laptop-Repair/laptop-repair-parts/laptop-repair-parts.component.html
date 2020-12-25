@@ -1,0 +1,105 @@
+<section class="dashboard section">
+  <!-- Container Start -->
+  <div class="container">
+    
+    <!-- Row Start -->
+    <div *ngFor="let item of items" class="row">
+      <div class="col-md-10 offset-md-1 col-lg-4 offset-lg-0">
+        <div class="sidebar">
+          
+          <!-- User Widget -->
+          <div class="widget user-dashboard-profile">
+            <!-- User Image -->
+            <img class="img-fluid" src="../../../{{item.mainImageUrl}}" alt="">
+           
+            <!-- User Name -->
+            <h5 class="text-center">{{item.name}}</h5>
+            <p>{{item.releaseYear}}</p>
+            <a href="" data-toggle="modal" data-target="#deleteaccount" class="btn btn-main-sm">Check-up your device?</a>
+          </div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="deleteaccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <!-- <div class="modal-header border-bottom-0">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div> -->
+                      <div class="modal-body text-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <img src="../../../assets//images/Checkup.jpg" class="img-fluid mb-2" alt="">
+                        <h6 class="py-2">Don't know your mobile status, get it checked</h6>
+                        <p>You will send your device to us, we will check it and notify you of the situation and malfunctions</p>
+
+                        <p>Please describe your <span class="MobilskaTextColor">{{item.name}}</span> problem</p>
+                        <textarea name="message" id="" cols="40" rows="4" class="w-100 rounded"></textarea>
+                      </div>
+                      <div class="modal-footer border-top-0 mb-3 mx-5 justify-content-lg-between justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-main">Send to Check-Up</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                
+        </div>
+      </div>
+
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+        <!-- Recently Favorited -->
+        <div class="widget dashboard-containerM my-adslist">
+          <h3 class="widget-header">List of potential reparation for <span class="MobilskaTextColor">{{item.name}}</span></h3>
+          <table class="table table-responsive product-dashboard-table">
+            <thead>
+              <tr>
+                <th class="pl-4">Image</th>
+                <th>Reparation</th>
+                <th class="text-center">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let product of products">
+                <td class="product-thumb">
+
+                  <img width="80px" height="auto" src="../../../{{product.productImages[0]}}" alt="image description"></td>
+                <td class="product-details">
+                  <span class="add-id"><strong>Name:</strong>{{product.name}}</span>
+                  <span class="status active"><strong>Price:</strong>{{product.priceKr}} Kr</span>
+                    <span class="wrap-text" ngbTooltip="{{product.description}}"><strong >About: </strong>{{product.description}}</span>
+
+                </td>
+                <td class="action" data-title="Action">
+                  <div class="">
+                    <ul class="list-inline justify-content-center">
+                      <li class="list-inline-item">
+                          <input type="checkbox" placement="top" ngbTooltip="Tooltip on top">
+                      </li>
+                                          
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+            <hr>
+
+            <a href="" data-toggle="modal" data-target="#deleteaccount" class="btn btn-main-sm float-right">Confirm Order</a>
+
+          </table>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- Row End -->
+  </div>
+  <!-- Container End -->
+</section>

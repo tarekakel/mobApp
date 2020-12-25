@@ -1,0 +1,88 @@
+<section class=" py-5 border-top-1 mt-5">
+    <div class="container">
+
+
+        <!-- <div class="row">
+			<div class="col-md-12">
+				<div class="search-result widget">
+					<div class="row">
+						<div class="col-md-11">
+							<h2>Mobile Repair Order</h2>
+							<p class="MobilskaTextColor">Please complete your mobile device repair order details</p>
+						</div>
+
+						<div class=" image_section col-md-1 pl-0">
+								<img class="img-thumbnail img-right" src="../../../assets/images/warranty.png" alt="">
+						</div>
+					</div>		
+				</div>
+			</div>
+		</div> -->
+
+
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-6 align-item-center" #orderDetails>
+                <div class="widget disclaimer" style="background-color: #F5F5F5;">
+                    <h5 class="MobilskaTextColor mb-4">Your device repair Order</h5>
+                    <h5 class="widget-header"> Item(s) of <span class="MobilskaTextColor">Iphone 11</span><span
+                            class="float-right">Total</span></h5>
+                    <ul>
+                        <li class="pt-1"><span class="MobilskaTextColor float-right"></span></li>
+                    </ul>
+                    <hr>
+                    <ul>
+                        <li *ngIf="WayId == 1"><b>Box Shipping fee <span class="float-right">DHL Express 1-4 days:
+                                    {{boxShippingFees}} kr
+                                </span></b></li>
+                        <li *ngIf="WayId == 2"><b>Shipping fee <span class="float-right">DHL Express 1-4 days:
+                                    {{shippingFees}} kr
+                                </span></b></li>
+                        <li *ngIf="WayId == 3"><b>Shipping fee <span class="float-right">0 kr
+                                </span></b></li>
+                    </ul>
+                    <hr>
+
+                    <ul>
+                        <li class="pb-2">
+                            <h4>Total <span class="float-right MobilskaTextColor"> Kr</span></h4>
+                            <span class="float-right ">(includes 25% VAT)</span>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 align-item-center">
+                <div class="dashboard-container">
+
+                    <div class="widget disclaimer">
+                        <h5>Billing Information</h5>
+                        <p>The address should be in Sweden.</p>
+
+                        <p>KLARNA CODE HERE</p>
+
+                        <b>AVAILABLE PAYMENT METHODS</b>
+                        <p>Pay later, Financing, Pay Now, Bank transfer and Card.</p>
+
+
+
+                        <ul class="text-center mt-4">
+                            <li><img style="max-width: 100%; max-height: 100%;"
+                                    src="https://cdn.klarna.com/1.0/shared/image/generic/badge/sv_se/checkout/short-blue.png?width=312">
+                            </li>
+                        </ul>
+
+                        <p class="pt-4">By ordering from the web store you accept <a [routerLink]="['/terms']">
+                                Mobilska's terms and
+                                conditions and privacy policy.</a>
+
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

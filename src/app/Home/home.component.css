@@ -1,0 +1,170 @@
+.card {
+    border: none;
+    border-radius: 0px;
+    background-color: #fff
+}
+
+.text1 {
+    font-size: 13px;
+    color: #cbcbcb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.info {
+    line-height: 17px
+}
+
+.cost span {
+    color: #fb3531;
+    font-weight: bold;
+    font-size: 20px
+}
+
+.star {
+    color: #FBC02D
+}
+
+.watchcost span {
+    color: #286783;
+    font-weight: bold;
+    font-size: 20px
+}
+
+.watch {
+    background: #286783
+}
+
+.tshirtcost span {
+    color: #0012b2;
+    font-weight: bold;
+    font-size: 20px
+}
+
+.tshirt {
+    background-color: #0012b2
+}
+
+.cursor {
+    cursor: pointer
+}
+
+
+/* animated text */
+.animated {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wordCarousel {
+    font-size: 36px;
+    font-weight: 100;
+    color: #fff;
+}
+.wordCarousel div {
+    overflow: hidden;
+    position: relative;
+    float: right;
+    height: 65px;
+    padding-top: 10px;
+    margin-top: -10px;
+}
+.wordCarousel div li {
+    font-size: 36px;
+    /* font-family: Serif; */
+    color: #fff;
+    font-weight: 700;
+    padding: 0 10px;
+    height: 45px;
+    margin-bottom: 45px;
+    display: block;
+}
+.flip2 {
+    animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+.flip3 {
+    animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+.flip4 {
+    animation: flip4 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite;
+}
+@keyframes flip2 {
+    0% {
+        margin-top: -180px;
+   }
+    5% {
+        margin-top: -90px;
+   }
+    50% {
+        margin-top: -90px;
+   }
+    55% {
+        margin-top: 0px;
+   }
+    99.99% {
+        margin-top: 0px;
+   }
+    100% {
+        margin-top: -270px;
+   }
+}
+@keyframes flip3 {
+    0% {
+        margin-top: -270px;
+   }
+    5% {
+        margin-top: -180px;
+   }
+    33% {
+        margin-top: -180px;
+   }
+    38% {
+        margin-top: -90px;
+   }
+    66% {
+        margin-top: -90px;
+   }
+    71% {
+        margin-top: 0px;
+   }
+    99.99% {
+        margin-top: 0px;
+   }
+    100% {
+        margin-top: -270px;
+   }
+}
+@keyframes flip4 {
+    0% {
+        margin-top: -360px;
+   }
+    5% {
+        margin-top: -270px;
+   }
+    25% {
+        margin-top: -270px;
+   }
+    30% {
+        margin-top: -180px;
+   }
+    50% {
+        margin-top: -180px;
+   }
+    55% {
+        margin-top: -90px;
+   }
+    75% {
+        margin-top: -90px;
+   }
+    80% {
+        margin-top: 0px;
+   }
+    99.99% {
+        margin-top: 0px;
+   }
+    100% {
+        margin-top: -270px;
+   }
+}

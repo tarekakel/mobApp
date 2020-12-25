@@ -1,0 +1,25 @@
+.widget-single {
+    background: #fff;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    padding: 25px 30px 30px;
+    margin-bottom: 30px;
+    border-radius: 2px;
+  }
+
+  .widget-single .widget-header {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dedede;
+  }
+
+  .widget-single ul li {
+      font-size: 16px;
+      padding: 6px;
+  }
+
+  .widget-single i {
+    font-size: 20px;
+}

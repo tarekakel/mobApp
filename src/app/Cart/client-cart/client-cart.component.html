@@ -1,0 +1,107 @@
+<section class=" py-5 border-top-1 mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-md-8 align-item-center">
+        <div class=" dashboard-container">
+          <h4 class="bg-gray p-3">
+            Your Cart Items
+          </h4>
+          <form action="#">
+            <fieldset class="p-4">
+              <table class="table product-dashboard-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th class="text-center">Image</th>
+                    <th>Item details</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Total</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let CartItem of CartItems; let i = index">
+                    <th class="product-index bc">{{ i + 1 }}</th>
+                    <td class="product-thumb center">
+                      <a [routerLink]="['/accessories-single', CartItem.id]">
+                        <img width="70px" height="auto" src="../../../{{ CartItem.productImages[0] }}"
+                          alt="image description" /></a>
+                    </td>
+
+                    <td class="product-details center">
+                      <a [routerLink]="['/accessories-single', CartItem.id]">
+                        <span class="add-id"><strong>Name:</strong>{{ CartItem.name }}</span>
+                        <span class="status active"><strong>Price:</strong>{{ CartItem.priceKr | number}}</span>
+                        <span class="Product-wrap-text" ngbTooltip="{{ CartItem.description }}"><strong>About:
+                          </strong>{{ CartItem.description }}</span>
+                      </a>
+                    </td>
+
+                    <td class="product-quantities bc">
+                      <i class="fa fa-minus" style="color: #fd1515; cursor: pointer;" (click)="decrease(CartItem)"></i>
+                      <span class="quantity">
+                        {{ CartItem.quantity }}
+                      </span>
+
+                      <span>
+                        <i class="fa fa-plus" style="color: #ff8250; cursor: pointer;" (click)="increase(CartItem)"></i>
+                      </span>
+                    </td>
+                    <td class="product-price bc">
+                      <span class="Product-wrap-text">
+                        <strong>{{CartItem.quantity * CartItem.priceKr | number}} Kr</strong></span>
+                    </td>
+                    <td class="action bc" data-title="Action">
+                      <a class="delete" (click)="clearCartItem(i)">
+                        <i class="fa fa-trash"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- <button type="submit"
+                class="float-right btn btn-main-sm mt-3 d-block py-2 px-4 text-white border-0 rounded font-weight-bold">
+                Confirm Order
+              </button> -->
+              <button type="submit"
+                class="float-right btn btn-red-sm mt-3 d-block  py-2 px-4 text-white border-0 rounded font-weight-bold"
+                (click)="clearCart()">
+                Clear Cart
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-3 align-item-center">
+        <div class="dashboard-container">
+
+          <div class="widget disclaimer" style="background-color: #F5F5F5;">
+            <h5 class="widget-header">Order Information</h5>
+            <ul>
+              <li>{{calcTotal() | number}} Cart Items <span class="MobilskaTextColor float-right">{{calcTotalPrice() | number}} Kr</span></li>
+              <li class="pt-2">Shipping fee<span class="MobilskaTextColor float-right">{{shippingFees}} Kr</span></li>
+            </ul>
+            <hr>
+            <ul>
+              <li><b>Total <span class="MobilskaTextColor float-right">{{ calcTotalPrice() + shippingFees | number}} Kr</span></b></li>
+            </ul>
+            <button type="submit"
+              class="btn btn-block btn-main-sm mt-4 d-block py-2 px-4 text-white border-0 rounded font-weight-bold"
+              [routerLink]="['/order-checkout']">
+              Confirm Order
+            </button>
+            <ul class="text-center mt-4">
+              <li><img style="max-width: 100%; max-height: 100%;" src="https://cdn.klarna.com/1.0/shared/image/generic/badge/sv_se/checkout/short-blue.png?width=312"></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+

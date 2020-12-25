@@ -1,0 +1,147 @@
+<app-top-slider></app-top-slider>
+
+<section class="section-sm">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="search-result bg-gray">
+					<h2>Accessories</h2>
+					<p>123 Results</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="category-sidebar">
+
+					<div class="widget category-list">
+						<h4 class="widget-header">Brands</h4>
+						<ul class="category-list">
+							<li><a href="#">All<span>233</span></a></li>
+							<li *ngFor="let brand of brands"><a href="#">{{brand.name}} <span>233</span></a></li>
+						</ul>
+					</div>
+
+					<div class="widget category-list">
+						<h4 class="widget-header">Devices</h4>
+						<ul class="category-list">
+							<li><a href="#">All<span>233</span></a></li>
+							<li *ngFor="let item of items"><a href="#">{{item.name}} <span>233</span></a></li>
+						</ul>
+					</div>
+
+					<!-- <div class="widget category-list">
+						<h4 class="widget-header">Price Range</h4>
+						<input type="range" min="1" max="100" value="100" class="price-range w-100" id="PriceRange">
+
+						<div class="d-flex justify-content-between mt-2">
+							<p>Price: <span class="value"></span></p>
+						</div>
+					</div> -->
+
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="category-search-filter">
+					<div class="row">
+						<div class="col-md-6">
+							<strong>Sort </strong>
+
+							<div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+								<button class="nice-select" id="dropdownManual" ngbDropdownAnchor
+									(focus)="myDrop.open()">Sort By</button>
+								<div ngbDropdownMenu aria-labelledby="dropdownManual">
+									<button ngbDropdownItem>Most Popular</button>
+									<button ngbDropdownItem (click)="sortByLowPrice()">Lowest Price</button>
+									<button ngbDropdownItem (click)="sortByHighPrice()">Highest Price</button>
+								</div>
+							</div>
+
+
+						</div>
+
+						<div class="col-md-6">
+							<div class="view">
+								<strong>Views</strong>
+								<ul class="list-inline view-switcher">
+									<li class="list-inline-item">
+										<a [routerLink]="['/accessories']" onclick="event.preventDefault();"
+											class="text-info"><i class="fa fa-th-large"></i></a>
+									</li>
+									<li class="list-inline-item">
+										<a [routerLink]="['/accessories-listview']"><i class="fa fa-reorder"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="product-grid-list">
+					<div class="row mt-30">
+
+						<div *ngFor="let product of products" class="col-sm-12 col-lg-4 col-md-6">
+							<!-- product card -->
+							<div class="product-item bg-light">
+								<div class="card">
+									<div class="thumb-content">
+										<!-- <div class="price">$200</div> -->
+										<a [routerLink]="['/accessories-single', product.id]">
+											<img class="card-img-top img-fluid pt-3"
+												src="../../../{{product.productImages[0]}}" alt="Card image cap">
+										</a>
+									</div>
+									<div class="card-body">
+										<h4 class="card-title"><a href="single.html">{{product.name}}</a></h4>
+										<ul class="list-inline product-meta">
+											<li class="list-inline-item">
+												<a href="#"><i class="fa fa-mobile"></i>{{product.itemName}}</a>
+											</li>
+											<li class="list-inline-item">
+												<p class="MobilskaTextColor">{{product.priceKr | number}} Kr</p>
+											</li>
+										</ul>
+										<p class="card-text">{{product.description}}</p>
+										<div class="product-ratings">
+											<ul class="list-inline">
+												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+												<li class="list-inline-item"><i class="fa fa-star"></i></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+				</div>
+				<div class="pagination justify-content-center">
+					<nav aria-label="Page navigation example">
+						<ul class="pagination">
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Previous">
+									<span aria-hidden="true">&laquo;</span>
+									<span class="sr-only">Previous</span>
+								</a>
+							</li>
+							<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#" aria-label="Next">
+									<span aria-hidden="true">&raquo;</span>
+									<span class="sr-only">Next</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
